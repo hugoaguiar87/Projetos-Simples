@@ -15,6 +15,66 @@ const closeModal = () => {
     }, 300)
 }
 
+const updateCart = () => {
+    html(".menu-openner span").innerHTML = `${cart.length}`
+
+    if(cart.length > 0) {
+        html("aside").classList.add("show")
+        html(".cart").innerHTML = ""
+
+        let subTotal = 0
+        let discount = 0
+        let total = 0
+
+        cart.map((pizza, index) => {
+            let pizzaItem = pizzaJson.find((iten) => { return iten.id == pizza.id })
+            let pizzaHtml = html(".models .cart--item").cloneNode(true)
+
+            let pizzaSize
+            switch (pizza.size) {
+                case 0:
+                    pizzaSize = "P"
+                    break;
+                case 1:
+                    pizzaSize = "M"
+                    break;
+                case 2:
+                    pizzaSize = "G"
+                    break;
+            }
+            let pizzaName = `${pizzaItem.name} (${pizzaSize})`
+
+            pizzaHtml.querySelector("img").setAttribute("src", `${pizzaItem.img}`)
+            pizzaHtml.querySelector(".cart--item-nome").innerHTML = pizzaName
+            pizzaHtml.querySelector(".cart--item--qt").innerHTML = pizza.qt
+            pizzaHtml.querySelector(".cart--item-qtmenos").addEventListener("click", () => {
+                if(pizza.qt > 1) {
+                    pizza.qt--
+                } else {
+                    cart.splice(index, 1)
+                }
+                updateCart()
+            })
+            pizzaHtml.querySelector(".cart--item-qtmais").addEventListener("click", () => {
+                pizza.qt++
+                updateCart()
+            })
+
+            subTotal += (pizza.qt * pizza.unitPrice)
+            discount = subTotal*0.1
+            total = subTotal - discount
+
+            html(".cart").append(pizzaHtml)            
+        })
+
+        html(".subtotal span:last-child").innerHTML = `R$ ${subTotal.toFixed(2)}`
+        html(".desconto span:last-child").innerHTML = `R$ ${discount.toFixed(2)}`
+        html(".total span:last-child").innerHTML = `R$ ${total.toFixed(2)}`
+    } else {
+        html("aside").classList.remove("show")
+        html("aside").style.left = "100vw"
+    }
+}
 
 pizzaJson.map((iten, index) => {
     let pizzaItem = html(".models .pizza-item").cloneNode(true)
@@ -100,6 +160,15 @@ html(".pizzaInfo--addButton").addEventListener("click", () => {
     }
 
     closeModal()
-    console.log(cart)
+    updateCart()
 })
 
+html(".menu-openner").addEventListener("click", () => {
+    if( cart.length > 0) {
+        html("aside").style.left = 0
+    }
+})
+
+html(".menu-closer").addEventListener("click", () => {
+    html("aside").style.left = "100vw"
+})
