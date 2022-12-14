@@ -82,13 +82,24 @@ document.querySelectorAll(".pizzaInfo--size").forEach((iten, index) => {
 
 html(".pizzaInfo--addButton").addEventListener("click", () => {
 
-    cart.push({
-        id: pizzaJson[key].id,
-        size: sizeSelected,
-        qt: modalQt,
-        unitPrice: pizzaJson[key].price[sizeSelected]
+    let identifier = `${pizzaJson[key].id}@${sizeSelected}`
+    let hasInCart = cart.findIndex((i) => {
+        return i.identifier == identifier
     })
 
+    if(hasInCart > -1) {
+        cart[hasInCart].qt += modalQt
+    } else {
+        cart.push({
+            identifier,
+            id: pizzaJson[key].id,
+            size: sizeSelected,
+            qt: modalQt,
+            unitPrice: pizzaJson[key].price[sizeSelected]
+        })  
+    }
+
     closeModal()
+    console.log(cart)
 })
 
