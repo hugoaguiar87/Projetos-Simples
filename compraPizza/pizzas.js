@@ -1,0 +1,9 @@
+let pizzaJson = [
+    {id:1, name:'Mussarela', img:'images/pizza.png', price: [ 22.00, 29.00, 36.00], sizes:['320g', '530g', '860g'], description:'Molho de tomate, mussarela, azeitonas e orégano. P: 6 fatias / M: 8 fatias / G: 12 fatias'},
+    {id:2, name:'Calabresa', img:'images/pizza2.png', price: [27.00, 34.00, 42.00], sizes:['320g', '530g', '860g'], description:'Molho de tomate, calabresa, bacon, cheddar, mussarela e orégano. P: 6 fatias / M: 8 fatias / G: 12 fatias'},
+    {id:3, name:'Quatro Queijos', img:'images/pizza3.png', price: [30.00, 36.00, 42.00], sizes:['320g', '530g', '860g'], description:'Molho de tomate, parmesão, cream cheese, cheddar, mussarela e orégano. P: 6 fatias / M: 8 fatias / G: 12 fatias'},
+    {id:4, name:'Americana', img:'images/pizza4.png', price: [32.00, 38.00, 43.00], sizes:['320g', '530g', '860g'], description:'Molho de tomate, carne de sol, batata palha, milho, ervilha, mussarela e orégano. P: 6 fatias / M: 8 fatias / G: 12 fatias'},
+    {id:5, name:'Filé Catupiry', img:'images/pizza5.png', price: [31.00, 35.00, 40.00], sizes:['320g', '530g', '860g'], description:'Molho de tomate, filé acebolado ao molho madeira, catupiry, mussarela e orégano. P: 6 fatias / M: 8 fatias / G: 12 fatias'},
+    {id:6, name:'Peito de Peru', img:'images/pizza6.png', price: [35.00, 40.00, 46.00], sizes:['320g', '530g', '860g'], description:'Molho de tomate, peito de peru, catupiry, cheddar, mussarela e orégano. P: 6 fatias / M: 8 fatias / G: 12 fatias'},
+    {id:7, name:'Chocolate', img:'images/pizza7.png', price: [24.00, 30.00, 35.00], sizes:['320g', '530g', '860g'], description:'Chocolate. P: 6 fatias / M: 8 fatias / G: 12 fatias'}
+];
