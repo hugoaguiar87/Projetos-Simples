@@ -31,7 +31,39 @@ const startStage = () => {
 }
 
 const updateInterface = () => {
-    alert(`votou em ${typedNumber}`)
+    let stage = stages[currentStage]
+    let candidate = stage.candidates.filter((c) => {
+        if(c.number === typedNumber) {
+            return true
+        } else {
+            return false
+        }
+    })
+
+    if(candidate.length > 0) {
+        candidate = candidate[0]
+
+        forVote.style.display = "block"
+        candidatesDescription.innerHTML = `Nome: ${candidate.name} <br/> Partido: ${candidate.party} <br/> ${candidate.vice ? `Vice: ${candidate.vice}` : ""}`
+        infos.style.display = "block"
+
+        let photosHtml = ''
+        for (let i in candidate.photos) {
+            photosHtml += `
+                <div class="--right-image ${candidate.photos[i].small ? "small" : ""}"> 
+                    <img src="images/${candidate.photos[i].url}" alt="Foto Candidato"/> 
+                    ${candidate.photos[i].subtitle}
+                </div>
+            `
+        }
+
+        images.innerHTML = photosHtml
+    } else {
+        forVote.style.display = "block"
+        infos.style.display = "block"
+        candidatesDescription.innerHTML = "<div class= 'warning flasher'> VOTO NULO</div>"
+
+    }
 }
 
 const handleClickButtonNumbers = (n) => {

@@ -8,7 +8,7 @@ let stages = [
                 name: 'Fulano de Tal',
                 party: 'ABC',
                 photos:[
-                    {url:'38111.jpg', legenda: 'Vereador'}
+                    {url:'38111.jpg', subtitle: 'Vereador'}
                 ]
             },
             {
@@ -16,7 +16,7 @@ let stages = [
                 name: 'Beltrano da Silva',
                 partido: 'DEFG',
                 photos:[
-                    {url:'77222.jpg', legenda: 'Vereador'}
+                    {url:'77222.jpg', subtitle: 'Vereador'}
                 ]
             },
         ]
@@ -31,8 +31,8 @@ let stages = [
                 party: 'ABC',
                 vice: 'Cic',
                 photos:[
-                    {url:'99.jpg', legenda: 'Prefeito'},
-                    {url:'99_2.jpg', legenda: 'Vice-Prefeito', small: true}
+                    {url:'99.jpg', subtitle: 'Prefeito'},
+                    {url:'99_2.jpg', subtitle: 'Vice-Prefeito', small: true}
                 ]
             },
             {
@@ -41,8 +41,8 @@ let stages = [
                 party: 'QWERTY',
                 vice: 'Zul',
                 photos:[
-                    {url:'84.jpg', legenda: 'Prefeito'},
-                    {url:'84_2.jpg', legenda: 'Vice-Prefeito', small: true}
+                    {url:'84.jpg', subtitle: 'Prefeito'},
+                    {url:'84_2.jpg', subtitle: 'Vice-Prefeito', small: true}
                 ]
             },
         ]
