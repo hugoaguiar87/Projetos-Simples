@@ -164,3 +164,12 @@ body {
     font-size: 40px;
     margin-top: 20px
 }
+
+.end {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 70px;
+}

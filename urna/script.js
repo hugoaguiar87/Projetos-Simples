@@ -7,11 +7,14 @@ let officeNumbers = document.querySelector(".--left-3")
 
 let currentStage = 0
 let typedNumber = ""
+let whiteVote = false
 
 const startStage = () => {
     let stage = stages[currentStage] 
-    
     let numberHtml = ""
+
+    typedNumber = ""
+    whiteVote = false
 
     for (let i=0; i<stage.numbers; i++) {
         if ( i === 0){
@@ -78,6 +81,41 @@ const handleClickButtonNumbers = (n) => {
             flasherElement.nextElementSibling.classList.add("flasher")
         } else {
             updateInterface()
+        }
+    }
+}
+
+const handleClickWhiteButton = () => {
+    typedNumber = ""
+    whiteVote = true
+
+    forVote.style.display = "block"
+    images.innerHTML = ""
+    infos.style.display = "block"
+    officeNumbers.innerHTML = ""
+    candidatesDescription.innerHTML = "<div class= 'warning flasher'> VOTO EM BRANCO</div>"
+
+} 
+
+const handleClickCorrectButton = () => {
+    startStage()
+}
+
+const handleClickConfirmButton = () => {
+    let stage = stages[currentStage]
+
+    let confirmedVote = false
+
+    if (whiteVote === true || typedNumber.length === stage.numbers) {
+        confirmedVote = true
+    }
+
+    if (confirmedVote === true) {
+        currentStage++
+        if(stages[currentStage] !== undefined) {
+            startStage()
+        } else {
+            document.querySelector(".screen").innerHTML = "<div class= 'end flasher'> FIM </div>"
         }
     }
 }
