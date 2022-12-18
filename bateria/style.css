@@ -37,7 +37,7 @@ h1 {
     cursor: pointer;
 }
 
-.key:active {
+.key:active, .key.active {
     color: #FF0;
     border: 2px solid #FF0;
 }
