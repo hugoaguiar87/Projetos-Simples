@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="gameArea">
+        <h1>Jogo da Velha</h1>
+
+        <div class="board">
+            <div game-area="a1" class="iten right bottom hover"></div>
+            <div game-area="a2" class="iten right bottom hover"></div>
+            <div game-area="a3" class="iten bottom hover"></div>
+
+            <div game-area="b1" class="iten right bottom hover"></div>
+            <div game-area="b2" class="iten right bottom hover"></div>
+            <div game-area="b3" class="iten bottom hover"></div>
+
+            <div game-area="c1" class="iten right hover"></div>
+            <div game-area="c2" class="iten right hover"></div>
+            <div game-area="c3" class="iten hover"></div>
+        </div>
+
+        <div class="infos">
+            <div id="turnPlayer">Jogador da vez: <span></span> </div>
+            <div id="result">Resultado: <span></span></div>
+        </div>
+
+        <button class="reset">Resetar</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
