@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #302D2E;
+    margin: 0;
+}
+
+.gameArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFF;
+    text-align: center;
+    font-size: 50px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 20px;
+}
+
+.iten {
+    height: 110px;
+    width: 110px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.hover:hover {
+    background-color: #242122;
+}
+
+.bottom {
+    border-bottom: 5px solid #FFF;
+}
+
+.right {
+    border-right: 5px solid #FFF;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 420px;
+    height: 120px;
+    padding: 20px;
+    border: 1px solid #242122;
+    background-color: #242122;
+    color: #FFF;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.infos div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 10px;
+    height: 100%;
+}
+
+button {
+    background-color: #242122;
+    color: #FFF;
+    border-radius: 10px;
+    border: 1px solid #000;
+    cursor: pointer;
+    padding: 12px;
+    margin: 10px;
+    font-size: 18px;
+}
+
+button:hover {
+    opacity: 0.5;
+}
