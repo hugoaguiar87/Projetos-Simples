@@ -78,7 +78,7 @@ h1 {
     height: 100%;
 }
 
-button {
+.reset {
     background-color: #242122;
     color: #FFF;
     border-radius: 10px;
@@ -89,6 +89,6 @@ button {
     font-size: 18px;
 }
 
-button:hover {
+.reset:hover {
     opacity: 0.5;
 }
